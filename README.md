@@ -48,24 +48,23 @@ A **Knowledge Graph (Neo4j)** serves as the backbone, semantically linking **bra
 
 ## 📂 Repository Structure  
 
-
-├── agents.py          # Defines AI agents (Summary, Q\&A, Quiz, History)
-├── app.py             # FastAPI application setup
-├── cli.py             # Command-line interface for testing
-├── config\_files/      # Configuration files for models & databases
-├── handlers.py        # Request handlers and routing logic
-├── images.py          # Image extraction & captioning logic
-├── kg.py              # Knowledge Graph (Neo4j) integration
-├── lessons/           # Educational content storage
-├── main.py            # Entry point for FastAPI
-├── ocr\_pdf.py         # OCR and curriculum PDF parsing
-├── pdf\_report.py      # Session report generation
-├── reports/           # Generated student reports
-├── retrieval.py       # Embedding-based context retrieval
-├── runtime.py         # Runtime execution helpers
-├── utils\_text.py      # Text utilities (summarization, formatting)
-└── session\_report.pdf # Example report output
----
+.
+├─ agents.py           # AI agents: Summary, Q&A, Quiz, History
+├─ app.py              # FastAPI application factory / setup
+├─ cli.py              # Command-line interface for local testing
+├─ config_files/       # Config for models, DB, API keys (non-secret)
+├─ handlers.py         # HTTP route handlers / controllers
+├─ images.py           # Image extraction & captioning utilities
+├─ kg.py               # Neo4j Knowledge Graph integration
+├─ lessons/            # Curriculum lesson assets
+├─ main.py             # FastAPI entrypoint (uvicorn target)
+├─ ocr_pdf.py          # OCR + curriculum PDF parsing
+├─ pdf_report.py       # Session report generation
+├─ reports/            # Generated student reports (artifacts)
+├─ retrieval.py        # Embedding-based context retrieval
+├─ runtime.py          # Runtime helpers (init, lifecycle, jobs)
+├─ utils_text.py       # Text utilities: summarization, formatting
+└─ session_report.pdf  # Example output report
 
 ## ⚙️ Tech Stack
 
