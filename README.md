@@ -1,18 +1,18 @@
 # Etude.AI – Tunisian Dialect-Aware Educational AI Platform
 
-## 📌 Introduction  
+##  Introduction  
 Etude.AI was developed for the **Artificial Intelligence National Summit (AINS) Hackathon**, under *Track 3: Tunisian Dialect-Aware AI*.  
 It is a **smart web platform** designed to support children with learning difficulties through **personalized, AI-powered educational content** in the Tunisian dialect.  
 
 The platform provides:  
-- 📖 **Lesson Summaries** – Simplify concepts from the curriculum.  
-- ❓ **Question Answering** – Respond to student queries in Tunisian dialect.  
-- 📝 **Quizzes** – Test understanding of specific lessons.  
-- 📊 **Progress Reports** – Track learning activities and generate detailed PDF reports.  
+-  **Lesson Summaries** – Simplify concepts from the curriculum.  
+-  **Question Answering** – Respond to student queries in Tunisian dialect.  
+-  **Quizzes** – Test understanding of specific lessons.  
+-  **Progress Reports** – Track learning activities and generate detailed PDF reports.  
 
 ---
 
-## 🏗 System Overview  
+##  System Overview  
 Etude.AI enhances learning with **multi-agent collaboration**, dynamically generating educational content based on student input, interests, and curricular structure.  
 
 Key components include:  
@@ -25,7 +25,7 @@ A **Knowledge Graph (Neo4j)** serves as the backbone, semantically linking **bra
 
 ---
 
-## 🔄 General Workflow  
+## General Workflow  
 1. **Student Input**: Learner specifies class and subject.  
 2. **Mode Selection**: Choose between *Summary, Q&A, Quiz*.  
 3. **Agent Invocation**: Specialized AI agent handles the request.  
@@ -35,7 +35,7 @@ A **Knowledge Graph (Neo4j)** serves as the backbone, semantically linking **bra
 
 ---
 
-## 🧠 Technical Architecture  
+## Technical Architecture  
 
 ### AI & Retrieval Layer
 - **CrewAI** – Multi-agent orchestration  
@@ -46,27 +46,38 @@ A **Knowledge Graph (Neo4j)** serves as the backbone, semantically linking **bra
 - **Gemini** – Image captioning for curriculum visuals  
 ---
 
-## 📂 Repository Structure  
+##  Repository Overview
 
-.
-├─ agents.py           # AI agents: Summary, Q&A, Quiz, History
-├─ app.py              # FastAPI application factory / setup
-├─ cli.py              # Command-line interface for local testing
-├─ config_files/       # Config for models, DB, API keys (non-secret)
-├─ handlers.py         # HTTP route handlers / controllers
-├─ images.py           # Image extraction & captioning utilities
-├─ kg.py               # Neo4j Knowledge Graph integration
-├─ lessons/            # Curriculum lesson assets
-├─ main.py             # FastAPI entrypoint (uvicorn target)
-├─ ocr_pdf.py          # OCR + curriculum PDF parsing
-├─ pdf_report.py       # Session report generation
-├─ reports/            # Generated student reports (artifacts)
-├─ retrieval.py        # Embedding-based context retrieval
-├─ runtime.py          # Runtime helpers (init, lifecycle, jobs)
-├─ utils_text.py       # Text utilities: summarization, formatting
-└─ session_report.pdf  # Example output report
+This repository contains the full implementation of **Etude.AI**.  
+Each file and folder is organized by its responsibility in the system.
 
-## ⚙️ Tech Stack
+###  Core Intelligence
+- **agents.py** → Implements the AI agents (Summary, Q&A, Quiz, History).  
+- **retrieval.py** → Embedding-based context search and semantic retrieval.  
+- **utils_text.py** → Helper functions for summarization, text formatting, and cleaning.  
+- **runtime.py** → Runtime utilities for orchestrating jobs and managing execution.  
+
+###  Application Layer
+- **app.py** → FastAPI application setup and initialization.  
+- **main.py** → Entry point to run the FastAPI server (`uvicorn main:app`).  
+- **handlers.py** → Request handlers that route API calls to the right agents.  
+- **cli.py** → Command-line tool for testing agents without the frontend.  
+
+###  Knowledge & Data
+- **kg.py** → Integration with Neo4j Knowledge Graph (nodes, relationships, queries).  
+- **config_files/** → Stores model, database, and system configuration files.  
+- **lessons/** → Educational lesson content used by the platform.  
+
+###  Processing & Media
+- **ocr_pdf.py** → Extracts and parses textual content from PDFs using OCR.  
+- **images.py** → Extracts curriculum images and generates captions.  
+- **pdf_report.py** → Creates structured student progress reports.  
+
+### Reports & Outputs
+- **reports/** → Stores generated reports (PDFs).  
+- **session_report.pdf** → Example of a generated student session report.  
+
+##  Tech Stack
 
 * **Python** (FastAPI, LangChain, CrewAI, Hugging Face, PyMuPDF)
 * **Neo4j** (Knowledge Graph storage & querying)
@@ -76,7 +87,7 @@ A **Knowledge Graph (Neo4j)** serves as the backbone, semantically linking **bra
 
 ---
 
-## 📌 Acknowledgments
+## Acknowledgments
 
 Developed as part of the **Artificial Intelligence National Summit (AINS) Hackathon 2025**, *Track 3: Tunisian Dialect-Aware AI* alongside Seifeddine Hamdi.
 
