@@ -1,0 +1,63 @@
+plan_task:
+  description: |-
+    Plan and coordinate personalized study sessions for a child focusing on {Branch},
+    within the topic: {Topic}. Create a weekly schedule over the date range {date_range},
+    including {sessions_per_week} sessions per week.
+    Consider and address the following learning obstacles: {obstacles}.
+    Incorporate the following context from the last session and the parent's remark:
+    - Last session: {last_session}
+    - Parent remark: {parent_remark}
+
+    Include a goal for the session, and clear communication notes for the parent or child when needed.
+  expected_output: |-
+    A well-structured JSON file containing a personalized session plan.
+    The file must include a list of session objects, each with the following fields:
+    1. 'Branch' (e.g., Math),
+    2. 'Topic' (e.g., Fractions),
+    3. 'Lesson' (specific topic or concept, e.g., Understanding Denominators),
+    4. 'obstacles' (list of learning challenges this session is targeting),
+    5. 'date' (scheduled session date in YYYY-MM-DD format),
+    6. 'session_goal' (short description of what the session aims to achieve),
+    7. 'parent_tip' (optional advice for the parent to reinforce learning).
+
+    Ensure the JSON is valid, parsable, and suitable for integration with session trackers or dashboards.
+  human_input: False
+  async_execution: False
+
+sessions_history_task:
+  description: |-
+    You have access to structured JSON data about past learning sessions via your knowledge source.
+    Your task is to read and analyze those logs and produce a paragraph summary.
+
+    Summarize:
+    - What was taught (branch, topic, lesson)
+    - How the child engaged with the content
+    - Any learning difficulties or obstacles
+    - Quiz performance (rating and pass/fail)
+
+    Write clearly in Modern Standard Arabic, suitable for a parent or educator.
+  expected_output: >-
+    A single paragraph in Arabic that summarizes the sessions. Be clear and concise,
+    mentioning dates, performance, and any improvement or challenges.
+  human_input: False
+  async_execution: False
+
+user_history_task:
+  description: |-
+    You have access to structured JSON data about the child's overall learning history via your knowledge source.
+    Your task is to read and analyze those logs and produce a comprehensive summary .
+
+    Summarize:
+    - Key milestones in the child's learning journey
+    - Strengths and areas for improvement
+    - Notable changes in engagement or performance over time
+    - Recommendations for future learning strategies
+
+    Write clearly in Modern Standard Arabic, suitable for a parent or educator.
+  expected_output: >-
+    A detailed summary in Arabic that encapsulates the child's learning history. Be thorough and insightful,
+    providing a clear picture of the child's progress and suggestions for future growth.
+  human_input: False
+  async_execution: False
+
+
