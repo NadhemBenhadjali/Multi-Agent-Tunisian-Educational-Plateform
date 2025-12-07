@@ -18,10 +18,10 @@ from neo4j import GraphDatabase, Driver
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # ──────────────── Configuration ────────────────
-NEO4J_URI:      str = "neo4j+s://2192f3cc.databases.neo4j.io"
+NEO4J_URI:      str = "neo4j+s://599c903b.databases.neo4j.io"
 NEO4J_USER:     str = "neo4j"
-NEO4J_PASSWORD: str = "hLTWxx2CxBqDkp66-XR0n-GJyz48V8f3unBdd6rXQ8A"
-CSV_PATH:       Path = Path("config_files") / "captions_ar (1).csv"
+NEO4J_PASSWORD: str = "pNpqkMHUrcDyiBsD9chZW2AHYpg3xf7jGzMPlPtbBOc"
+CSV_PATH:       Path = "captions_ar (1).csv"
 MODEL_NAME:     str = "Omartificial-Intelligence-Space/GATE-AraBert-v1"
 CLEAR_DB_FIRST: bool = True          
 # ────────────────────────────────────────────────

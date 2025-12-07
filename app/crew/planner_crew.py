@@ -20,7 +20,7 @@ class PlannerCrew:
 
     @llm
     def llm_cfg(self) -> LLM:
-        return LLM(model="gemini/gemini-2.0-flash", temperature=0.5, max_tokens=4000)
+        return LLM(model="gemini/gemini-2.5-flash-lite", temperature=0.5, max_tokens=4000)
 
     @tool
     def lesson_retriever_tool(self) -> LessonRetrieverTool:
@@ -56,7 +56,7 @@ class PlannerCrew:
     @task
     def user_history_task(self) -> Task:
         return Task(
-          kjh   ,
+            config=self.tasks_config['user_history_task'],
             agent=self.user_history_agent(),
         )
 

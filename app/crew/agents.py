@@ -1,7 +1,7 @@
 from crewai import Agent, LLM
 
 def build_llm() -> LLM:
-    return LLM(model="gemini/gemini-2.0-flash", temperature=0.5, max_tokens="4000")
+    return LLM(model="gemini/gemini-2.5-flash-lite", temperature=0, max_tokens="4000")
 
 def define_agents(tool) -> tuple[Agent, Agent, Agent, Agent, Agent]:
     llm = build_llm()
