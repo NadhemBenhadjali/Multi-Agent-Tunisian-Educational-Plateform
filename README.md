@@ -8,7 +8,7 @@ Etude.AI is a **backend service** that uses multi-agent LLMs, a Neo4j knowledge 
 - **PDF session reports for parents**
 
 This repo contains **only the backend, data pipelines, and planner logic** – not the frontend UI.
-** The complete platform, including the frontend application, Docker configuration, deployment setup, and production infrastructure, is maintained in a private repository.**
+**The complete platform, including the frontend application, Docker configuration, deployment setup, and production infrastructure, is maintained in a private repository.**
 
 ---
 
